@@ -1,7 +1,7 @@
 <!--
  * @Date: 2025-11-27 15:29:25
  * @LastEditors: sunkr1995 35027245+sunkr1995@users.noreply.github.com
- * @LastEditTime: 2025-11-28 11:46:39
+ * @LastEditTime: 2025-11-28 11:47:48
  * @FilePath: \emo-video-analysis-mcp\README.md
  * @Description: Do not edit
 -->
@@ -83,4 +83,4 @@ uv add "mcp[cli]" httpx
 ```
 
 
-对应的APP_KEY APP_SECRET 需要到https://open.lianxinyun.com/进行生成。
+对应的APP_KEY APP_SECRET 需要到https://open.lianxinyun.com/  进行生成。
