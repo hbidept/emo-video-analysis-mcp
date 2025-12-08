@@ -8,7 +8,7 @@ Description: Do not edit
 # config.py
 import os
 # API 网关基础地址
-API_BASE = "https://gateway.biyouxinli.com"
+API_BASE = "https://gateway.lianxinyun.com"
 
 # 模型名称映射
 MODEL_NAME_MAPPING = {
@@ -26,7 +26,7 @@ APP_KEY=os.getenv('APP_KEY',None)
 APP_SECRET=os.getenv('APP_SECRET',None)
 
 # 认证服务器地址
-AUTH_SERVER_URL = "https://gateway.biyouxinli.com/access/token"
+AUTH_SERVER_URL = "https://gateway.lianxinyun.com/access/token"
 
 # --- 日志配置 ---
 LOG_FILE_PATH = "app.log"  # 日志文件路径

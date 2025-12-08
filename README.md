@@ -1,7 +1,7 @@
 <!--
  * @Date: 2025-11-27 15:29:25
  * @LastEditors: sunkr1995 35027245+sunkr1995@users.noreply.github.com
- * @LastEditTime: 2025-11-28 11:47:48
+ * @LastEditTime: 2025-12-08 17:53:43
  * @FilePath: \emo-video-analysis-mcp\README.md
  * @Description: Do not edit
 -->
@@ -56,9 +56,9 @@ uv add "mcp[cli]" httpx
 </details>
 不建议MCP Server 和 ai对话客户端分别放置在同一机器上的不同系统，如window和wsl2
 
-## 🤖 在Cursor 或其他AI 对话客户端中使用  
+## 🤖 在AI 对话客户端中使用  
 
-打开Cursor 或其他AI 对话客户端 配置，在MCP中添加MCP Server
+打开AI 对话客户端 配置，在MCP中添加MCP Server
 
 在文件中添加如下内容后保存
 
@@ -84,3 +84,6 @@ uv add "mcp[cli]" httpx
 
 
 对应的APP_KEY APP_SECRET 需要到https://open.lianxinyun.com/  进行生成。
+
+
+PS: cursor 目前对 stdio 的支持不佳，使用cursor 时建议使用 sse 或者 stream http 形式
