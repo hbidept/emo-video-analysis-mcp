@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import logging
 from pydantic import Field
 from mcp.server.fastmcp import FastMCP
@@ -16,7 +17,7 @@ def register_video_tools(mcp: FastMCP, sign_cache_instance: SignCache):
     """
     async def base_video_tool(model_name, video_url: str, position_type: str,num_frames_per_second:int) -> dict:
         """
-        基础视频处理工具函数，调用指定的视频API模型。
+        基础视频处理工具函数,调用指定的视频API模型。
         """
         try:
             keys = get_auth_keys()
@@ -40,17 +41,17 @@ def register_video_tools(mcp: FastMCP, sign_cache_instance: SignCache):
             return {"code": 500, "data": f"服务器内部错误: {str(e)}"}
     
     @mcp.tool()
-    async def lianxin_video_api_EmotionRecognitionModel_front(
+    async def lx_v_EmotionRecognition_front(
          video_url: str = Field(description="视频链接"),num_frames_per_second: int = (Field(default=1, description="每秒抽取的帧数"))
     ) -> dict:
         """
         名称: 对视频进行情绪分析
-        描述: 使用连信情绪识别模型对视频进行情绪分析，适用于怼脸、平视 视角。
+        描述: 使用连信情绪识别模型对视频进行情绪分析,适用于怼脸、平视 视角。
         Args:
             video_url (str):视频链接
             num_frames_per_second (int): 每秒抽取的帧数
         Returns:
-            dict: 包含API响应的字典，包含状态码和数据。
+            dict: 包含API响应的字典,包含状态码和数据。
         """
         return await base_video_tool(
             model_name="EmotionRecognitionModel",
@@ -60,17 +61,17 @@ def register_video_tools(mcp: FastMCP, sign_cache_instance: SignCache):
         )
     
     @mcp.tool()
-    async def lianxin_video_api_PressureDetectionModel_front(
+    async def lx_v_PressureDetection_front(
         video_url:str = (Field(description="视频链接")),num_frames_per_second: int = (Field(default=1, description="每秒抽取的帧数"))
     )-> dict:
         """
         Name: 对视频进行压力分析
-        Desciption: 使用连信压力分析模型对视频检测并识别人的面部表情、肌肉紧张度、微动作等特征，评估个体可能正在承受的压力水平。适用于怼脸、平视 视角。
+        Desciption: 使用连信压力分析模型对视频检测并识别人的面部表情、肌肉紧张度、微动作等特征,评估个体可能正在承受的压力水平。适用于怼脸、平视 视角。
         Args:
         video_url (str):视频链接
         num_frames_per_second (int): 每秒抽取的帧数
         Returns:
-            dict: 包含API响应的字典，包含状态码和数据
+            dict: 包含API响应的字典,包含状态码和数据
 
         """
         return await base_video_tool(
@@ -81,17 +82,17 @@ def register_video_tools(mcp: FastMCP, sign_cache_instance: SignCache):
         )
     
     @mcp.tool()
-    async def lianxin_video_api_PadRecognitionModel_front(
+    async def lx_v_PadRecognition_front(
         video_url:str = (Field(description="视频链接")),num_frames_per_second: int = (Field(default=5, description="每秒抽取的帧数"))
     )-> dict:
         """
         Name: 对视频进行情绪强度分析
-        Desciption: 使用连信情绪强度模型对视频进行情绪强度分析，输出PAD（愉悦度、激活度、支配度）三维情绪空间的量化评估，提供更精细的情绪描述。适用于怼脸、平视 视角。
+        Desciption: 使用连信情绪强度模型对视频进行情绪强度分析,输出PAD（愉悦度、激活度、支配度）三维情绪空间的量化评估,提供更精细的情绪描述。适用于怼脸、平视 视角。
         Args:
             video_url (str):视频链接
             num_frames_per_second (int): 每秒抽取的帧数
         Returns:
-            dict: 包含API响应的字典，包含状态码和数据
+            dict: 包含API响应的字典,包含状态码和数据
 
         """
         return await base_video_tool(
@@ -102,17 +103,17 @@ def register_video_tools(mcp: FastMCP, sign_cache_instance: SignCache):
         )
 
     @mcp.tool()
-    async def lianxin_video_api_EmotionRecognitionModel_monitor(
+    async def lx_v_EmotionRecognition_monitor(
          video_url: str = Field(description="视频链接"),num_frames_per_second: int = (Field(default=1, description="每秒抽取的帧数"))
     ) -> dict:
         """
         名称: 对视频进行情绪分析
-        描述: 使用连信情绪识别模型对视频进行情绪分析，适用于高位、监控 视角。
+        描述: 使用连信情绪识别模型对视频进行情绪分析,适用于高位、监控 视角。
         Args:
         video_url (str):视频链接
         num_frames_per_second (int): 每秒抽取的帧数
         Returns:
-            dict: 包含API响应的字典，包含状态码和数据。
+            dict: 包含API响应的字典,包含状态码和数据。
         """
         return await base_video_tool(
             model_name="EmotionRecognitionModel",
@@ -122,17 +123,17 @@ def register_video_tools(mcp: FastMCP, sign_cache_instance: SignCache):
         )
     
     @mcp.tool()
-    async def lianxin_video_api_PressureDetectionModel_monitor(
+    async def lx_v_PressureDetection_monitor(
         video_url:str = (Field(description="视频链接")),num_frames_per_second: int = (Field(default=1, description="每秒抽取的帧数"))
     )-> dict:
         """
         Name: 对视频进行压力分析
-        Desciption: 使用连信压力分析模型对视频检测并识别人的面部表情、肌肉紧张度、微动作等特征，评估个体可能正在承受的压力水平。适用于高位、监控 视角。
+        Desciption: 使用连信压力分析模型对视频检测并识别人的面部表情、肌肉紧张度、微动作等特征,评估个体可能正在承受的压力水平。适用于高位、监控 视角。
         Args:
         video_url (str):视频链接
         num_frames_per_second (int): 每秒抽取的帧数
         Returns:
-            dict: 包含API响应的字典，包含状态码和数据
+            dict: 包含API响应的字典,包含状态码和数据
 
         """
         return await base_video_tool(
@@ -143,17 +144,17 @@ def register_video_tools(mcp: FastMCP, sign_cache_instance: SignCache):
         )
     
     @mcp.tool()
-    async def lianxin_video_api_PadRecognitionModel_monitor(
+    async def lx_v_PadRecognition_monitor(
         video_url:str = (Field(description="视频链接")),num_frames_per_second: int = (Field(default=5, description="每秒抽取的帧数"))
     )-> dict:
         """
         Name: 对视频进行情绪强度分析
-        Desciption: 使用连信情绪强度模型对视频进行情绪强度分析，输出PAD（愉悦度、激活度、支配度）三维情绪空间的量化评估，提供更精细的情绪描述。适用于高位、监控 视角。
+        Desciption: 使用连信情绪强度模型对视频进行情绪强度分析,输出PAD（愉悦度、激活度、支配度）三维情绪空间的量化评估,提供更精细的情绪描述。适用于高位、监控 视角。
         Args:
         video_url (str):视频链接
         num_frames_per_second (int): 每秒抽取的帧数
         Returns:
-            dict: 包含API响应的字典，包含状态码和数据
+            dict: 包含API响应的字典,包含状态码和数据
 
         """
         return await base_video_tool(
@@ -162,7 +163,4 @@ def register_video_tools(mcp: FastMCP, sign_cache_instance: SignCache):
             position_type="monitor_face",
             num_frames_per_second=num_frames_per_second
         )
-    # 如果还有其他视频相关的工具，可以继续在这里定义和注册
-    # @mcp.tool()
-    # async def another_video_tool(...):
-    #     ...
+

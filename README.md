@@ -1,7 +1,7 @@
 <!--
  * @Date: 2025-11-27 15:29:25
  * @LastEditors: sunkr1995 35027245+sunkr1995@users.noreply.github.com
- * @LastEditTime: 2025-12-08 17:53:43
+ * @LastEditTime: 2025-12-09 11:50:56
  * @FilePath: \emo-video-analysis-mcp\README.md
  * @Description: Do not edit
 -->
@@ -85,5 +85,3 @@ uv add "mcp[cli]" httpx
 
 对应的APP_KEY APP_SECRET 需要到https://open.lianxinyun.com/  进行生成。
 
-
-PS: cursor 目前对 stdio 的支持不佳，使用cursor 时建议使用 sse 或者 stream http 形式

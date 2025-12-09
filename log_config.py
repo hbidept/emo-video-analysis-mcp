@@ -1,8 +1,8 @@
 '''
 Date: 2025-11-25 16:08:52
-LastEditors: sunkr 522697475@qq.com
-LastEditTime: 2025-11-25 16:08:53
-FilePath: /lianxin_mcp_stream/log_config.py
+LastEditors: sunkr1995 35027245+sunkr1995@users.noreply.github.com
+LastEditTime: 2025-12-09 11:49:35
+FilePath: \emo-video-analysis-mcp\log_config.py
 Description: Do not edit
 '''
 # log_config.py
@@ -40,7 +40,7 @@ def setup_logging():
 
     # 4. 配置控制台处理器 (Console/Stream Handler)
     #    - 这会将日志输出到标准输出（你的终端）
-    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler = logging.StreamHandler(sys.stderr)
     console_handler.setFormatter(log_formatter)
     root_logger.addHandler(console_handler)
 
